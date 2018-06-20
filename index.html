@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+	<script type="text/javascript" src="js/service.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <div class="mainContainer" ng-app="myApp" ng-controller="myCtrl">
+        <h1>Integer Spiral</h1>
+        <form class="integerSpiral">
+
+            <div class="fieldset">
+                <label>Input Number :</label>
+                <input class="number" ng-model="params.intNumber"/>
+            </div>
+            <div class="fieldset">
+                <label>Select Direction :</label>
+                <select class="selectDir" ng-model="params.selectedDir" ng-options="x for x in dir">
+		            <option value="">-- Select Direction --</option>
+				</select>
+            </div>
+
+            <div class="submitBtnOuter">
+                <button class="submit" ng-click="generateSpiral(params)">Submit</button>
+            </div>
+        </form>
+        <div class="outputSection">
+            <h2>OUTPUT:</h2>
+
+            <div class="output" ng-show="showOutput">
+                <table class="spiralTable">
+                    <tbody>
+                        <tr ng-repeat="row in grid track by $index">
+                            <td ng-repeat="col in row track by $index">{{col}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="error" ng-hide="showOutput">
+                <span>{{errorMessage}}</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

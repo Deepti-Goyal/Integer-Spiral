@@ -1,0 +1,27 @@
+.mainContainer{
+	margin:0 auto;
+	text-align:center;
+}	
+.submit{
+    padding: 10px;
+	margin:15px;
+    background-color: blue;
+    border: none;
+    color:white;
+}
+.output .spiralTable{
+	margin:0 auto;
+}
+.integerSpiral .fieldset label{
+	font-weight:bold;
+}
+.integerSpiral .fieldset{
+	display:inline-block;
+	margin:15px;
+}
+.integerSpiral .fieldset .number{
+	width:70px;
+}
+.error{
+	color:red;
+}	
